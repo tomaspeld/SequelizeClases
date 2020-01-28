@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titulos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Información </h1>
+    <li> <%=movie.title%> </li>
+    <li>
+      duracion : <%=movie.length%>
+    </li>
+    <li>
+      Fecha de estreno : <%=movie.release_date%>
+    </li>
+    <li>
+      Premios : <%=movie.awards%>
+    </li>
+    <li>
+     Rating : <%=movie.rating%>
+    </li>
+    <li>
+      Actores : 
+      <ul>
+        <% movie.actores.forEach( actor => { %>
+         <li>
+          <%actor.firts_name%> <%=actor.last_name%>
+      </ul>
+      <%})%> 
+     </li>
+     
+
+    <br>
+
+   
+    <a href="/movies/editar/<%=movie.id%>">
+       <button>Editar</button>
+    </a>
+    <br>  <br>
+    <form action="movies/borrar/<%=movie.id%>?_method=DELETE" method="POST"></form>
+    <button type="submit">Borrar</button>
+ 
+  </body>
+</html>

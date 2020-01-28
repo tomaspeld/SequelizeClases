@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>titulo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Listado de peliculas </h1>
+    <br>
+    <h2><% movies.forEach( movies => { %>
+        <li>
+           <a href="/movies/<%=movies.id%>"><%=movies.title%> </a>
+        </li>
+    <%})%> 
+      </h2>
+    
+
+  </body>
+</html>

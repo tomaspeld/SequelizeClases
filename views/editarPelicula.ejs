@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titulos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<h1>Editar pelicula</h1>
+<form action="/movies/editar/<%=movie.id%>?_method=PUT" method="POST"></form>
+<div>
+    <label for="">Titulo</label>
+    <input type="text" name="titulo" value="<%=movie.title%>" id="">
+
+</div>
+<div>
+    <label for="">Premios</label>
+    <input type="text" name="premios" value="<%=movie.awards%>" id="">
+
+</div>
+<div>
+    <label for="">Duración</label>
+    <input type="text" name="duracion" value="<%=movie.length%>" id="">
+
+</div>
+<div>
+    <label for="">Rating</label>
+    <input type="text" name="rating" value="<%=movie.rating%>" id="">
+
+</div>
+<div>
+    <label for="">Fecha de estreno</label>
+    <input type="date" name="fecha_estreno"  id="">
+
+</div>
+<div>
+    <label for="">Genero</label>
+    <select name="genero" id="">
+        <% for (let i = 0; i < genres.length; i++) { %>
+            <% if (genres[i].id == movie.genre_id) { %>
+        <option value="<%=genres[i].id%>" selected>
+            <%=genres[i].name%>
+       </option>
+       <% { else { %>
+        <option value="<%=genres[i].id%>">
+            <%=genres[i].name%>
+       <%}%> 
+       <%}%> 
+     </select>
+</div>
+<button type="submit">Editar</button>
+</form>
+
+</body>
+</html>
